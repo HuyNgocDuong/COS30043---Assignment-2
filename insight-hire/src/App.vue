@@ -1,18 +1,27 @@
 <template>
-  <div class="container text-center">
-    <h1 class="text-primary">Hello Vue + Bootstrap!</h1>
-    <button class="btn btn-success">Click Me</button>
+  <div id="app">
+    <Header />
+    
   </div>
 </template>
 
 <script>
+// Import components
+import Header from './components/Header.vue';
+
 export default {
-  name: 'App'
-}
+  name: 'App',
+  components: {
+    Header
+  }
+};
 </script>
 
 <style>
-h1 {
-  margin-top: 20px;
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 </style>
