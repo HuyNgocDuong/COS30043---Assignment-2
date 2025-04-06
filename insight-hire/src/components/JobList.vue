@@ -1,14 +1,15 @@
 <template>
-  <div class="job-list">
-    <h3>Job Explorer</h3>
-    <ul>
-      <li>
-        <router-link to="/" class="nav-link">
-          <span></span> Overview
+  <div class="bg-danger text-white p-3 rounded ">
+  <!-- Adding the text-nowrap so it wont make any changes when route to other link -->
+    <h4 class="mb-3 text-nowrap">Job Explorer</h4>
+    <ul class="list-unstyled">
+      <li class="mb-2">
+        <router-link to="/" class="nav-link px-2 py-1 rounded text-red" active-class="bg-white text-danger fw-bold">
+          Overview
         </router-link>
       </li>
-      <li v-for="code in jobCodes" :key="code">
-        <router-link :to="'/job/' + code" class="nav-link">
+      <li v-for="code in jobCodes" :key="code" class="mb-2">
+        <router-link :to="'/job/' + code" class="nav-link px-2 py-1 rounded text-red" active-class="bg-white text-danger fw-bold">
           {{ code }}
         </router-link>
       </li>
@@ -25,31 +26,7 @@ export default {
         'MLA101', 'DSC202', 'AIP303', 'DEV404', 'CLD505',
         'DSA606', 'NLP707', 'CVV808', 'SEC909', 'RLS010'
       ]
-    }
+    };
   }
-}
+};
 </script>
-
-<style scoped>
-.job-list {
-  width: 200px;
-  background-color: #e63946;
-  color: white;
-  padding: 20px;
-  border-radius: 6px;
-}
-
-.nav-link {
-  display: block;
-  color: white;
-  padding: 6px 0;
-  text-decoration: none;
-}
-
-.nav-link.router-link-active {
-  background-color: white;
-  color: #e63946;
-  border-radius: 4px;
-  padding: 6px;
-}
-</style>

@@ -1,9 +1,9 @@
 <template>
-  <div class="job-overview">
-    <div class="header1">
-      <h2>Job Overview</h2>
+  <div class="job-overview bg-white p-4 rounded shadow-sm">
+    <div class="mb-4">
+      <h2 class="text-primary">Job Overview</h2>
     </div>
-    <div class="content">
+    <div class="mb-4">
       <p>
         Insight Hire connects passionate individuals with exciting opportunities in the fields of 
         Artificial Intelligence, Data Science, Cybersecurity, and Software Development. Our platform 
@@ -23,81 +23,47 @@
         details of each opportunity, and start building your future today.
       </p>
     </div>
-    
+
     <hr />
 
-    <div class="services">
-      <h3>Our Services</h3>
-      <div class="service-list">
-        <div class="service-card">
-          <i class="fas fa-search"></i>
-          <h4>Job Search</h4>
-          <p>Find the perfect job matching your skills and goals.</p>
+    <div class="mt-4">
+      <h3 class="mb-3">Our Services</h3>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card text-center h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fas fa-search fa-2x text-primary mb-2"></i>
+              <h5 class="card-title">Job Search</h5>
+              <p class="card-text">Find the perfect job matching your skills and goals.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-card">
-          <i class="fas fa-file-alt"></i>
-          <h4>Resume Building</h4>
-          <p>Create effective resumes that highlight your strengths.</p>
+        <div class="col-md-4 mb-3">
+          <div class="card text-center h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fas fa-file-alt fa-2x text-primary mb-2"></i>
+              <h5 class="card-title">Resume Building</h5>
+              <p class="card-text">Create effective resumes that highlight your strengths.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-card">
-          <i class="fas fa-comments"></i>
-          <h4>Interview Prep</h4>
-          <p>Prepare for interviews with our expert coaching.</p>
+        <div class="col-md-4 mb-3">
+          <div class="card text-center h-100 shadow-sm">
+            <div class="card-body">
+              <i class="fas fa-comments fa-2x text-primary mb-2"></i>
+              <h5 class="card-title">Interview Prep</h5>
+              <p class="card-text">Prepare for interviews with our expert coaching.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.job-overview {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+<script>
+export default {
+  name: 'JobOverview'
+};
+</script>
 
-.header1 h2 {
-  color: #002ead;
-}
-
-.content p {
-  font-size: 16px;
-  color: #333;
-  line-height: 1.5;
-}
-
-.services {
-  margin-top: 20px;
-}
-
-.service-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.service-card {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  width: 30%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.service-card i {
-  font-size: 30px;
-  color: #002ead;
-}
-
-.service-card h4 {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.service-card p {
-  font-size: 14px;
-  color: #555;
-}
-</style>
