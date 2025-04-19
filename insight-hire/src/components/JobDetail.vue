@@ -1,5 +1,5 @@
 <template>
-  <div v-if="job" class="card shadow-sm border-0 p-4">
+  <div v-if="job" class="flex-grow-1">
       <h2 class="text-primary mb-4">{{ job.job_title }}</h2>
 
       <div class="mb-3">

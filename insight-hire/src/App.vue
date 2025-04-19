@@ -8,7 +8,7 @@
         <JobList />
       </div>
 
-      <!-- Main content (JobDetail or JobOverview) -->
+      <!-- Main content: router-view (JobOverview or JobDetail) -->
       <div class="content">
         <router-view />
       </div>
@@ -30,7 +30,6 @@ export default {
 </script>
 
 <style>
-/* Base styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -44,7 +43,7 @@ body {
   min-height: 100vh;
 }
 
-/* Layout container below the header */
+/* Layout container */
 .main-layout {
   display: flex;
   flex: 1;
@@ -52,27 +51,37 @@ body {
   gap: 20px;
 }
 
-/* Sidebar: JobList.vue */
+/* Sidebar */
 .sidebar {
-  flex: 0 0 250px; /* Fixed width */
+  flex: 0 0 250px;
   background-color: #dc3545;
   color: white;
   border-radius: 8px;
   padding: 16px;
-  min-height: calc(100vh - 76px); /* Adjust for header height */
+  min-height: calc(100vh - 76px); /* Adjust if Header height changes */
 }
 
-/* Main content: router-view */
+/* Main content area */
 .content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  border-radius: 8px;
-  padding: 16px;
-  min-height: calc(100vh - 76px); /* Match sidebar height */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 32px;
+  min-height: calc(100vh - 76px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Responsive: Stack on mobile */
+
+/* Make router-view content fill the height too */
+.content > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive layout on smaller screens */
 @media (max-width: 768px) {
   .main-layout {
     flex-direction: column;
@@ -84,6 +93,10 @@ body {
   }
 
   .content {
+    min-height: auto;
+  }
+
+  .content > * {
     min-height: auto;
   }
 }
