@@ -1,6 +1,6 @@
 <template>
   <div v-if="job" class="flex-grow-1">
-      <h2 class="text-primary mb-4">{{ job.job_title }}</h2>
+      <h2 class="text-danger mb-4">{{ job.job_title }}</h2>
 
       <div class="mb-3">
         <p><strong class="text-secondary">Category:</strong> {{ job.category }}</p>
