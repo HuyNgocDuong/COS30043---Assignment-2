@@ -17,21 +17,21 @@
 
         <p>
           <strong class="text-secondary">Required Skills:</strong>
-          <span class="badge bg-info text-dark me-1" v-for="(skill, index) in job.required_skills" :key="'skill-' + index">
+          <span class="ms-2 badge bg-info text-dark me-1" v-for="(skill, index) in job.required_skills" :key="'skill-' + index">
             {{ skill }}
           </span>
         </p>
 
-        <p v-if="job.preferred_qualifications && job.preferred_qualifications.length">
+        <p v-if="job.preferred_qualifications && job.preferred_qualifications.length">  
           <strong class="text-secondary">Preferred Qualifications:</strong>
-          <span class="badge bg-secondary text-light me-1" v-for="(qual, index) in job.preferred_qualifications" :key="'qual-' + index">
+          <span class="ms-2 badge bg-secondary text-light me-1" v-for="(qual, index) in job.preferred_qualifications" :key="'qual-' + index">
             {{ qual }}
           </span>
         </p>
 
         <p v-if="job.tags && job.tags.length">
           <strong class="text-secondary">Tags:</strong>
-          <span class="badge bg-warning text-dark me-1" v-for="(tag, index) in job.tags" :key="'tag-' + index">
+          <span class="ms-2 badge bg-warning text-dark me-1" v-for="(tag, index) in job.tags" :key="'tag-' + index">
             {{ tag }}
           </span>
         </p>
