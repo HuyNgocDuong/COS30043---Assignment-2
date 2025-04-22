@@ -12,17 +12,17 @@
         <legend>Personal Details</legend>
         <div class="mb-3">
           <label class="form-label">First Name</label>
-          <input type="text" v-model="form.firstName" class="form-control" required />
+          <input type="text" name="firstName" v-model="form.firstName" class="form-control" required />
           <div class="text-danger" v-if="errors.firstName">{{ errors.firstName }}</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Last Name</label>
-          <input type="text" v-model="form.lastName" class="form-control" required />
+          <input type="text" name="lastName" v-model="form.lastName" class="form-control" required />
           <div class="text-danger" v-if="errors.lastName">{{ errors.lastName }}</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Date of Birth</label>
-          <input type="date" v-model="form.dob" class="form-control" required />
+          <input type="date" name="dob" v-model="form.dob" class="form-control" required />
           <div class="text-danger" v-if="errors.dob">{{ errors.dob }}</div>
         </div>
       </fieldset>
@@ -32,17 +32,17 @@
         <legend>Account Info</legend>
         <div class="mb-3">
           <label class="form-label">Username</label>
-          <input type="text" v-model="form.username" class="form-control" required />
+          <input type="text" name="username" v-model="form.username" class="form-control" required />
           <div class="text-danger" v-if="errors.username">{{ errors.username }}</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Password</label>
-          <input type="password" v-model="form.password" class="form-control" required />
+          <input type="password" name="password" v-model="form.password" class="form-control" required />
           <div class="text-danger" v-if="errors.password">{{ errors.password }}</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Confirm Password</label>
-          <input type="password" v-model="form.confirmPassword" class="form-control" required />
+          <input type="password" name="confirmPassword" v-model="form.confirmPassword" class="form-control" required />
           <div class="text-danger" v-if="errors.confirmPassword">{{ errors.confirmPassword }}</div>
         </div>
       </fieldset>
@@ -52,25 +52,25 @@
         <legend>Contact</legend>
         <div class="mb-3">
           <label class="form-label">Email</label>
-          <input type="email" v-model="form.email" class="form-control" required />
+          <input type="email" name="email" v-model="form.email" class="form-control" required />
           <div class="text-danger" v-if="errors.email">{{ errors.email }}</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Mobile Number</label>
-          <input type="text" v-model="form.mobile" class="form-control" required />
+          <input type="text" name="mobile" v-model="form.mobile" class="form-control" required />
           <div class="text-danger" v-if="errors.mobile">{{ errors.mobile }}</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Street Address</label>
-          <input type="text" v-model="form.street" class="form-control" maxlength="40" />
+          <input type="text" name="street" v-model="form.street" class="form-control" maxlength="40" />
         </div>
         <div class="mb-3">
           <label class="form-label">Suburb</label>
-          <input type="text" v-model="form.suburb" class="form-control" maxlength="20" />
+          <input type="text" name="suburb" v-model="form.suburb" class="form-control" maxlength="20" />
         </div>
         <div class="mb-3">
           <label class="form-label">Postcode</label>
-          <input type="text" v-model="form.postcode" class="form-control" required />
+          <input type="text" name="postcode" v-model="form.postcode" class="form-control" required />
           <div class="text-danger" v-if="errors.postcode">{{ errors.postcode }}</div>
         </div>
       </fieldset>
@@ -78,7 +78,7 @@
       <!-- Job Category -->
       <div class="mb-4">
         <label class="form-label">Preferred Job Category</label>
-        <select v-model="form.jobCategory" class="form-select" required>
+        <select name="jobCategory" v-model="form.jobCategory" class="form-select" required>
           <option disabled value="">Select a category</option>
           <option>AI</option>
           <option>Data Science</option>
@@ -94,6 +94,7 @@
           I agree to the Terms and Conditions
         </label>
       </div>
+      <div class="text-danger mb-3" v-if="errors.terms">{{ errors.terms }}</div>
 
       <div v-if="showTerms" class="alert alert-secondary">
         <h6 class="fw-bold">Job Explorer Terms & Conditions</h6>
@@ -178,6 +179,10 @@ export default {
         this.errors.jobCategory = 'Please select a job category.';
       }
 
+      if (!this.showTerms) {
+        this.errors.terms = 'You must agree to the terms and conditions to continue.';
+      }
+
       if (Object.keys(this.errors).length === 0) {
         this.$el.querySelector('form').submit();
       }
@@ -185,6 +190,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 button[type="submit"] {
   width: 100%;
@@ -212,6 +218,3 @@ button[type="submit"]:hover {
   text-decoration: underline;
 }
 </style>
-
-
-
